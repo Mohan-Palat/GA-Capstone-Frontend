@@ -1,6 +1,7 @@
 import './App.css';
-import { Component } from 'react';
+import {React, Component } from 'react';
 import SessionList from './components/SessionList';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 class App extends Component{
   constructor(props){
     super(props);
@@ -11,7 +12,12 @@ class App extends Component{
   render(){
     return(
       <>
-        <SessionList></SessionList>
+        <Router>
+          <Route exact path = "/Sessions">
+            <SessionList></SessionList>
+          </Route>
+        </Router>
+        
       </>
     );
   };

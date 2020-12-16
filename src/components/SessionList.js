@@ -42,7 +42,7 @@ class SessionList extends Component{
     }
 
     render(){
-
+        
         return(
             <div>
                 Hello!
