@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+const apiURL = 'https://localhost:5000';
+
 class SessionList extends Component{
     constructor(props){
         super(props);
@@ -10,7 +12,8 @@ class SessionList extends Component{
     }
 
     getAllSessions = () =>{
-        const apiURL = '';
+        const sessionsURL = apiURL+'/Sessions';
+        
     }
 
     render(){
