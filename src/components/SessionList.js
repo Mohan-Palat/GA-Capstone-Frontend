@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Grid, Button } from 'semantic-ui-react';
-const apiURL = 'https://localhost:5000';
+//import { Grid, Button } from 'semantic-ui-react';
+const apiURL = 'http://localhost:5000';
 
 class SessionList extends Component{
     constructor(props){
@@ -22,19 +22,24 @@ class SessionList extends Component{
 
     getAllSessions = async() =>{
         const sessionsURL = apiURL+'/Sessions';
-        console.log('get all sessions: ');
+        console.log('get all sessions: '+sessionsURL);
         try{
-            const allSessions = await axios(sessionsURL);
-            console.log(allSessions.data.data);
+            const allSessions = await axios.get(sessionsURL);
+            console.log(allSessions.data);
         } catch(err){
             console.log(err);
         }
 
     }
 
+    componentDidMount(){
+        this.getAllSessions();
+    }
+
     render(){
         return(
             <div>
+                Hello!
             </div>
         );
     }
