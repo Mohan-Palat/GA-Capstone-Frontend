@@ -26,6 +26,7 @@ class SessionList extends Component{
         try{
             const allSessions = await axios.get(sessionsURL);
             console.log(allSessions.data);
+            
         } catch(err){
             console.log(err);
         }
