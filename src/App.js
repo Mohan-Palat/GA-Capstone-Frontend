@@ -1,7 +1,8 @@
 import './App.css';
 import {React, Component } from 'react';
-import SessionList from './components/SessionList';
+import SessionContainer from './components/SessionContainer';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Grid, Button } from 'semantic-ui-react';
 class App extends Component{
   constructor(props){
     super(props);
@@ -9,12 +10,13 @@ class App extends Component{
 
     }
   }
+
   render(){
     return(
       <>
         <Router>
           <Route exact path = "/Sessions">
-            <SessionList></SessionList>
+            <SessionContainer></SessionContainer>
           </Route>
         </Router>
         

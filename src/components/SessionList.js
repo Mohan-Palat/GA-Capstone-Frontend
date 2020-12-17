@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Session from './Session'
-import axios from 'axios';
 import { Grid, Button } from 'semantic-ui-react';
 const apiURL = 'http://localhost:5000';
 
