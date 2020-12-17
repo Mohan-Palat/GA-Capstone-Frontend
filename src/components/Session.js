@@ -41,7 +41,7 @@ class Session extends Component{
         return(
             <>
             <div>
-                <Link to = {sessionPath}>{this.props.session.location}</Link>  
+        <Link to = {sessionPath}>{this.props.session.location} </Link>  
                 <br/>
                 {date}
             </div>

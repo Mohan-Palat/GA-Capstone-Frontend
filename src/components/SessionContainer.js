@@ -86,6 +86,10 @@ class SessionContainer extends Component{
         this.getAllSessions();
     }
 
+    componentWillUnmount(){
+        console.log("######UNMOUNT#######");
+    }
+
     render(){
          const sessionPath = '/Sessions/'+this.state.currentSession.id
          //const sessionPath = '/Sessions/5fdade9e855dae11865dcf2f'
