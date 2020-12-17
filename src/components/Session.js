@@ -1,39 +1,33 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { BrowserRouter as Router, Route,Link } from "react-router-dom";
-import SessionShow from './SessionShow';
-import HandsList from './HandsList';
-const apiURL = 'http://localhost:5000';
+//const apiURL = 'http://localhost:5000';
 
 class Session extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            hands: []
-        }
     }
 
-    getAllHands = async() =>{
-        const handsURL = apiURL+'/Sessions/'+this.props.id+'/Hands';
-        console.log('get all hands in session: '+handsURL);
-        console.log('date: ',this.props.session.date.$date)
-        try{
-            const allHands = await axios.get(handsURL);
+    // getAllHands = async() =>{
+    //     const handsURL = apiURL+'/Sessions/'+this.props.id+'/Hands';
+    //     console.log('get all hands in session: '+handsURL);
+    //     console.log('date: ',this.props.session.date.$date)
+    //     try{
+    //         const allHands = await axios.get(handsURL);
 
-            await this.setState(
-                {
-                    hands: allHands.data
-                }
-            )
-            console.log(this.state.hands);
-        } catch(err){
-            console.log(err);
-        }
-    }
+    //         await this.setState(
+    //             {
+    //                 hands: allHands.data
+    //             }
+    //         )
+    //         console.log(this.state.hands);
+    //     } catch(err){
+    //         console.log(err);
+    //     }
+    // }
 
-    componentDidMount(){
-        this.getAllHands();
-    }
+    // componentDidMount(){
+    //     this.getAllHands();
+    // }
 
     render(){
         const date = new Date(this.props.session.date.$date).toDateString();
@@ -45,7 +39,6 @@ class Session extends Component{
                 <br/>
                 {date}
             </div>
-            <HandsList hands = {this.state.hands} session = {this.props.id}></HandsList>
             {/* <Router>
                 <Route exact path = {sessionPath}>
                     <SessionShow id = {this.props.id} hands={this.state.hands}></SessionShow>

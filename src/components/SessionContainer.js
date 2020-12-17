@@ -49,8 +49,16 @@ class SessionContainer extends Component{
         return '';
       }
     
-    getSessionByID = () =>{
-
+    getHands = async(id) =>{
+        console.log('GET HANDS CALLED param: ',id);
+        const handsURL = apiURL+'/Sessions/'+id+'/Hands'
+        try{
+            const allHands = await axios.get(handsURL);
+            return allHands;
+        }
+        catch(err){
+            console.log(err);
+        }
     }
     
     getAllSessions = async() =>{
@@ -102,9 +110,16 @@ class SessionContainer extends Component{
                 <Route exact path = "/NewSession">
                     <CreateSession addNewSession ={this.addNewSession}></CreateSession>
                 </Route>
-                {/* <Route exact path = {sessionPath}>
-                    <SessionShow id = {sessionPath} ></SessionShow>
-                </Route> */}
+                <Route exact path = '/Sessions/:id' render={({match})=>{
+                    console.log('MATCH: ',match.params.id);
+                    const session = this.state.sessions.filter(item=> item._id.$oid === match.params.id)
+                    const hands = this.getHands(match.params.id);
+                    console.log('SESSION: ',session);
+                    console.log('HANDS',hands);
+                    return <SessionShow id = {match.params.id} session = {session}></SessionShow>
+                }}>
+                    
+                </Route>
                 </Router>
 
             </div>
@@ -112,4 +127,8 @@ class SessionContainer extends Component{
     }
 }
 
+
+//SessionContainer
+    //SessionList
+        //Session*Item* //SessionShow
 export default SessionContainer;

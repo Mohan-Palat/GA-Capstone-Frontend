@@ -9,12 +9,7 @@ function HandsList(props){
     })
     return(
         <div>
-            {/* {hands} */}
-            <div>
-                <a href = "/NewHand">Add Hand</a>
-            </div>
-            
-            {/* <Button>Add Session</Button> */}
+            {hands}
         </div>
     );
 }
