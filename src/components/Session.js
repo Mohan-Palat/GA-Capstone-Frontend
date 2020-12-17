@@ -40,15 +40,15 @@ class Session extends Component{
         return(
             <>
             <div>
-                <a href = {sessionPath}>{this.props.session.location}</a>  
+                <a href = {sessionPath} onClick={this.props.setCurrentSession(this.props.session,this.state.hands)}>{this.props.session.location}</a>  
                 <br/>
                 {date}
             </div>
-            {/* <Router>
+            <Router>
                 <Route exact path = {sessionPath}>
                     <SessionShow id = {this.props.id} hands={this.state.hands}></SessionShow>
                 </Route>
-            </Router> */}
+            </Router>
             </>
         );
     }

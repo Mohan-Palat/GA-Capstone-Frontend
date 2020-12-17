@@ -6,7 +6,7 @@ function SessionList(props){
 
     const sessions = props.sessions.map((session)=>{
         console.log('id: ',session._id.$oid)
-        return (<Session key={session._id.$oid} session={session} id = {session._id.$oid}></Session>)
+        return (<Session key={session._id.$oid} session={session} id = {session._id.$oid} setCurrentSession={props.setCurrentSession}></Session>)
     })
     return(
         <div>
