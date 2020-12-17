@@ -38,6 +38,7 @@ class Session extends Component{
         return(
             <div>
                 {this.props.session.location}
+                <br/>
                 {date}
             </div>
         );
