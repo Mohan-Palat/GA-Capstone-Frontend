@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SessionShow from './SessionShow';
+import HandsList from './HandsList';
 const apiURL = 'http://localhost:5000';
 
 class Session extends Component{
@@ -44,11 +45,13 @@ class Session extends Component{
                 <br/>
                 {date}
             </div>
-            <Router>
+            <HandsList hands = {this.state.hands} session = {this.props.id}></HandsList>
+            {/* <Router>
                 <Route exact path = {sessionPath}>
                     <SessionShow id = {this.props.id} hands={this.state.hands}></SessionShow>
                 </Route>
-            </Router>
+            </Router> */}
+
             </>
         );
     }
