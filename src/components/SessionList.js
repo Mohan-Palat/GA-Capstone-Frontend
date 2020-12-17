@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 function SessionList(props){
     console.log('props: ',props.sessions)
 
-    const sessions = props.sessions.map((session)=>{
+    const sessions = props.sessions.map((session,index)=>{
         console.log('id: ',session._id.$oid)
-        return (<><Session key={session._id.$oid} session={session} id = {session._id.$oid}></Session></>)
+        return (<><Session key={session._id.$oid} session={session} id = {session._id.$oid} setCurrentSession={props.setCurrentSession}></Session></>)
     })
     return(
         <div>

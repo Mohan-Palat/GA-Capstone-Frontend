@@ -41,11 +41,12 @@ class Session extends Component{
         return(
             <>
             <div>
-                <Link to = {sessionPath}>{this.props.session.location}</Link>  
+                <Link to = {sessionPath} onClick={this.props.setCurrentSession(this.props.session,this.state.hands)}>{this.props.session.location}</Link>  
                 <br/>
                 {date}
             </div>
-            <HandsList hands = {this.state.hands} session = {this.props.id}></HandsList>
+            {/* <HandsList hands = {this.state.hands} session = {this.props.id}></HandsList> */}
+            
             {/* <Router>
                 <Route exact path = {sessionPath}>
                     <SessionShow id = {this.props.id} hands={this.state.hands}></SessionShow>
