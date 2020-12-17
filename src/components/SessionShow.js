@@ -8,6 +8,7 @@ function SessionShow(props){
     //     console.log('id: ',session._id.$oid)
     //     return (<Hand key={session._id.$oid} session={session} id = {session._id.$oid}></Hand>)
     // })
+    
     return(
         <div>
             {this.props.id}

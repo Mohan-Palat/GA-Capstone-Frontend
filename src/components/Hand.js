@@ -4,7 +4,7 @@ function Hand(props){
   
     return(
         <div>
-           {this.props.id}
+           
         </div>
     );
 }
