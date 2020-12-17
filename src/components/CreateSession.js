@@ -13,7 +13,7 @@ class CreateSession extends Component {
   };
   render() {
     return (
-      <Segment>
+      <Segment onSubmit={(e) => this.props.addNewSession(e, this.state)}>
         <h4>Add Session</h4>
         <Form>
           <Label>Location:</Label>
@@ -23,16 +23,18 @@ class CreateSession extends Component {
             value={this.state.location}
             onChange={this.handleChange}
           />
-          <Label>Entered with: $</Label>
+          <Label>Entered with: </Label>
           <Form.Input
             type="number"
+            placeholder="$"
             name="start_money"
             value={this.state.start_money}
             onChange={this.handleChange}
           />
-          <Label>Exited with: $</Label>
+          <Label>Exited with: </Label>
           <Form.Input
             type="number"
+            placeholder="$"
             name="end_money"
             value={this.state.end_money}
             onChange={this.handleChange}

@@ -24,7 +24,17 @@ class SessionContainer extends Component{
         }
     }
 
-    addNewSession = () =>{
+    addNewSession = async(e,data) =>{
+        console.log(data);
+        const newSessionURL = apiURL+'/Sessions'
+
+        try{
+            await axios.post(newSessionURL,data);
+        }
+        catch(err){
+            console.log(err);
+        }
+
         return '';
       }
 
