@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route,Link } from "react-router-dom";
 import SessionShow from './SessionShow';
 import HandsList from './HandsList';
 const apiURL = 'http://localhost:5000';
@@ -41,7 +41,7 @@ class Session extends Component{
         return(
             <>
             <div>
-                <a href = {sessionPath}>{this.props.session.location}</a>  
+                <Link to = {sessionPath}>{this.props.session.location}</Link>  
                 <br/>
                 {date}
             </div>
