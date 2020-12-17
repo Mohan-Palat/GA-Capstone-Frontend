@@ -37,7 +37,11 @@ class SessionContainer extends Component{
 
         return '';
       }
+    
+    getSessionByID = () =>{
 
+    }
+    
     getAllSessions = async() =>{
         const sessionsURL = apiURL+'/Sessions';
         console.log('get all sessions: '+sessionsURL);
@@ -83,6 +87,7 @@ class SessionContainer extends Component{
                     <CreateSession addNewSession ={this.addNewSession}></CreateSession>
                 </Route>
                 </Router>
+
             </div>
         );
     }
