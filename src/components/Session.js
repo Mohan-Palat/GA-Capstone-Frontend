@@ -41,7 +41,7 @@ class Session extends Component{
         return(
             <>
             <div>
-                <a href = {sessionPath} onClick={this.props.setCurrentSession(this.props.session,this.state.hands)}>{this.props.session.location}</a>  
+                <a href = {sessionPath}>{this.props.session.location}</a>  
                 <br/>
                 {date}
             </div>
