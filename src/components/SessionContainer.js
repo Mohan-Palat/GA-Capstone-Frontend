@@ -3,6 +3,7 @@ import axios from 'axios';
 //import { Grid, Button } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SessionList from './SessionList';
+import SessionShow from './SessionShow';
 import CreateSession from './CreateSession';
 
 const apiURL = 'http://localhost:5000';
@@ -76,7 +77,7 @@ class SessionContainer extends Component{
     }
 
     render(){
-        
+        // const sessionPath = '/Sessions'+'zzzz'
         return(
             <div>
                 <Router>
@@ -86,6 +87,9 @@ class SessionContainer extends Component{
                 <Route exact path = "/NewSession">
                     <CreateSession addNewSession ={this.addNewSession}></CreateSession>
                 </Route>
+                {/* <Route exact path = {sessionPath}>
+                    <SessionShow id = {this.props.id} hands={this.state.hands}></SessionShow>
+                </Route> */}
                 </Router>
 
             </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button, Label, Segment } from 'semantic-ui-react';
+import { Form, Label, Segment } from 'semantic-ui-react';
 
 class CreateSession extends Component {
   state = {

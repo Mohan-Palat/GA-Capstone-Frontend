@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Session from './Session'
-import { Card, Button } from 'semantic-ui-react';
-const apiURL = 'http://localhost:5000';
 
 function SessionList(props){
     console.log('props: ',props.sessions)

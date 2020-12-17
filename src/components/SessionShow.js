@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Hand from './Hand'
+
 function SessionShow(props){
-    console.log('props: ',props.sessions)
+    console.log('In Session SHow: ',props.id)
 
     // const hands = props.hands.map((hand)=>{
     //     console.log('id: ',session._id.$oid)
@@ -9,6 +10,7 @@ function SessionShow(props){
     // })
     return(
         <div>
+            {this.props.id}
             <div>
                 <a href = "/NewHand">Add Session</a>
             </div>
