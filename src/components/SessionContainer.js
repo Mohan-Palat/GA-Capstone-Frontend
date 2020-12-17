@@ -20,7 +20,9 @@ class SessionContainer extends Component{
             currentSession: {}
         }
     }
-
+    addNewSession = () =>{
+        return '';
+    }
     getAllSessions = async() =>{
         const sessionsURL = apiURL+'/Sessions';
         console.log('get all sessions: '+sessionsURL);
@@ -46,7 +48,7 @@ class SessionContainer extends Component{
         
         return(
             <div>
-                <SessionList sessions = {this.state.sessions}></SessionList>
+                <SessionList sessions = {this.state.sessions} addNewSession = {this.addNewSession}></SessionList>
             </div>
         );
     }

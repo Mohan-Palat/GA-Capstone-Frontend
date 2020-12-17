@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
+import Session from './Session'
 import axios from 'axios';
 import { Grid, Button } from 'semantic-ui-react';
 const apiURL = 'http://localhost:5000';
 
-class SessionList extends Component{
-    constructor(props){
-        super(props);
-    }
+function SessionList(props){
+    console.log('props: ',props.sessions)
 
-    render(){
-        console.log('props: ',this.props.sessions)
-        return(
-            <div>
-                Hellko
-            </div>
-        );
-    }
+    const sessions = props.sessions.map((session)=>{
+        return <Session key={session._id.$oid} session={session}></Session>
+    })
+    return(
+        <div>
+            {sessions}
+            {/* <Button>Add Session</Button> */}
+        </div>
+    );
 }
 
 export default SessionList;

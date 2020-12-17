@@ -12,12 +12,17 @@ class Session extends Component{
     }
 
     getAllHands = () =>{
-        const apiURL = '';
+        const handsURL = apiURL+'';
+    }
+
+    componentDidMount(){
+        this.getAllHands();
     }
 
     render(){
         return(
             <div>
+                {this.props.session.location}
             </div>
         );
     }
