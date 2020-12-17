@@ -93,17 +93,14 @@ class SessionContainer extends Component{
             <div>
                 <Router>
                 <Route exact path = "/Sessions">
-                    <SessionList sessions = {this.state.sessions} setCurrentSession = {this.setCurrentSession} ></SessionList>
+                    <SessionList sessions = {this.state.sessions} addNewSession = {this.addNewSession} setCurrentSession = {this.setCurrentSession}></SessionList>
                 </Route>
                 <Route exact path = "/NewSession">
                     <CreateSession addNewSession ={this.addNewSession}></CreateSession>
                 </Route>
-                <Route exact path = {sessionPath} render={(props)=>{
-                    return <SessionShow  {...props}
-                                          id = {this.state.currentSession.id}
-                                          hands = {this.state.currentHands}></SessionShow>
-                }}>
-                </Route>
+                {/* <Route exact path = {sessionPath}>
+                    <SessionShow id = {sessionPath} ></SessionShow>
+                </Route> */}
                 </Router>
 
             </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Label, Segment,Button } from 'semantic-ui-react';
+import { Form, Label, Segment } from 'semantic-ui-react';
 
 class CreateSession extends Component {
   state = {
@@ -39,7 +39,7 @@ class CreateSession extends Component {
             value={this.state.end_money}
             onChange={this.handleChange}
           />
-          <button className="ui button primary" type="Submit">Add Session</button>
+          <button type="Submit">Add Session</button>
         </Form>
       </Segment>
     );
