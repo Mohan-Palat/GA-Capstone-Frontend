@@ -44,11 +44,11 @@ class Session extends Component{
                 <br/>
                 {date}
             </div>
-            <Router>
+            {/* <Router>
                 <Route exact path = {sessionPath}>
                     <SessionShow id = {this.props.id} hands={this.state.hands}></SessionShow>
                 </Route>
-            </Router>
+            </Router> */}
             </>
         );
     }

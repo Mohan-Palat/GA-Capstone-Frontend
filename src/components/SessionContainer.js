@@ -21,8 +21,18 @@ class SessionContainer extends Component{
             newSession:{
                 location: ''
             },
-            currentSession: {}
+            currentSession: {},
+            currentHands: []
         }
+    }
+
+    setCurrentSession = (session,hands) =>{
+        this.setState(
+            {
+                currentSession: session,
+                currentHands: hands
+            }
+        )
     }
 
     addNewSession = async(e,data) =>{
@@ -77,19 +87,20 @@ class SessionContainer extends Component{
     }
 
     render(){
-        // const sessionPath = '/Sessions'+'zzzz'
+         const sessionPath = '/Sessions/'+this.state.currentSession.id
+         //const sessionPath = '/Sessions/5fdade9e855dae11865dcf2f'
         return(
             <div>
                 <Router>
                 <Route exact path = "/Sessions">
-                    <SessionList sessions = {this.state.sessions} addNewSession = {this.addNewSession}></SessionList>
+                    <SessionList sessions = {this.state.sessions} addNewSession = {this.addNewSession} setCurrentSession = {this.setCurrentSession}></SessionList>
                 </Route>
                 <Route exact path = "/NewSession">
                     <CreateSession addNewSession ={this.addNewSession}></CreateSession>
                 </Route>
-                {/* <Route exact path = {sessionPath}>
-                    <SessionShow id = {this.props.id} hands={this.state.hands}></SessionShow>
-                </Route> */}
+                <Route exact path = {sessionPath}>
+                    <SessionShow id = {sessionPath} ></SessionShow>
+                </Route>
                 </Router>
 
             </div>

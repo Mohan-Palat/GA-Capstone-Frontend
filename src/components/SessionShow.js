@@ -11,9 +11,9 @@ function SessionShow(props){
     
     return(
         <div>
-            {this.props.id}
+            {props.id}
             <div>
-                <a href = "/NewHand">Add Session</a>
+                <a href = "/NewHand">Add Hand</a>
             </div>
             
             {/* <Button>Add Session</Button> */}
