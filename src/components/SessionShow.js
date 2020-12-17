@@ -35,7 +35,7 @@ class SessionShow extends Component{
         
         return(
             <>
-                {this.props.id}
+                <HandsList hands = {this.state.hands}></HandsList>
                 <div>
                  <a href = {'/Sessions/'+this.props.id+'/NewHand'}>Add Hand</a>
              </div>
