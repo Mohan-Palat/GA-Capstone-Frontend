@@ -4,7 +4,7 @@ function Hand(props){
   
     return(
         <div>
-           {this.props.id}
+           {props.hand.hole_cards[0].rank}{props.hand.hole_cards[0].suit}{props.hand.hole_cards[1].rank}{props.hand.hole_cards[1].suit}
         </div>
     );
 }

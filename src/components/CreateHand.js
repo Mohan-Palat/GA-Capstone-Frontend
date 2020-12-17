@@ -10,7 +10,9 @@ class CreateHand extends Component {
     start_money: '',
     end_money: ''
   };
+  handleCard = (e,num) => {
 
+  }
   handleChange = (e) => {
     this.setState({ [e.currentTarget.name]: e.currentTarget.value });
   };
