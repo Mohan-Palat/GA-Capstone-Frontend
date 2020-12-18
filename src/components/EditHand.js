@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Form, Label, Segment,TextArea,Button} from 'semantic-ui-react';
 import Select from 'react-select'
 import data from '../data/cards'
+import axios from 'axios';
+
+const apiURL = 'http://localhost:5000';
+
 class EditHand extends Component {
   state = {
     card1_rank: '',
@@ -32,14 +36,23 @@ class EditHand extends Component {
     this.setState({ [e.currentTarget.name]: e.currentTarget.value });
     //console.log('ACTION: ',this.state.action);
   };
+
+
+  setInitialState = () =>{
+      console.log(this.props.hand);
+  }
+
+  componentDidMount(){
+      this.setInitialState();
+  }
   render() {
     const options = data.map((card)=>{
         return {value: card, label:card.rank+card.suit}
     })
 
     return (
-      <Segment onSubmit={(e) => this.props.addNewHand(e, this.state,this.props.id)}>
-        <h4>Add Hand</h4>
+      <Segment onSubmit={() => this.props.editHand(this.props.id, this.state)}>
+        <h4>View/Edit Hand</h4>
         <Form>
           <Label>Cards:</Label>
           <Select className ="cardSelect" options={options} onChange={this.handleCard1}></Select>
@@ -66,7 +79,7 @@ class EditHand extends Component {
             value={this.state.start_money}
             onChange={this.handleChange}
           />
-          <Button type="Submit">Add Hand</Button>
+          <Button type="Submit">Save Hand</Button>
         </Form>
       </Segment>
     );

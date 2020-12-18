@@ -104,6 +104,29 @@ class SessionContainer extends Component{
         }
     }
     
+    editHand = async(id,data) =>{
+        console.log('EDIT HAND CALLED: ',id);
+        const editHandURL = apiURL+'/Hands/'+id;
+        try{
+            await axios.put(editHandURL,data);
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+
+    getHandByID = async(id)=>{
+        const handURL = apiURL+'/Hands/'+id;
+        try{
+            const hand = await axios.get(handURL);
+            console.log('HAND TO EDIT: '+hand);
+            return hand
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+    
     getAllSessions = async() =>{
         const sessionsURL = apiURL+'/Sessions';
         console.log('get all sessions: '+sessionsURL);
@@ -155,7 +178,7 @@ class SessionContainer extends Component{
                 }}>
                 </Route>
                 <Route exact path = '/Hands/:id' render={({match})=>{
-                    return <EditHand id = {match.params.id } ></EditHand>
+                    return <EditHand id = {match.params.id } editHand={this.editHand} hand={this.getHandByID(match.params.id)}></EditHand>
                 }}>
                 </Route>
                 </Router>
