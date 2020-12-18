@@ -16,9 +16,7 @@ function SessionList(props){
             {sessions}
             <div>
                 <a href = "/NewSession">Add Session</a>
-            </div>
-            
-            {/* <Button>Add Session</Button> */}
+            </div>    
         </div>
     );
 }
