@@ -35,7 +35,7 @@ class SessionShow extends Component{
         
         return(
             <>
-                <HandsList hands = {this.state.hands}></HandsList>
+                <HandsList hands = {this.state.hands} deleteHand={this.props.deleteHand}></HandsList>
                 <div>
                  <a href = {'/Sessions/'+this.props.id+'/NewHand'}>Add Hand</a>
              </div>

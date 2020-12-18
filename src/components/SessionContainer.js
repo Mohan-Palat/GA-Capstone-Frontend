@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-//import { Grid, Button } from 'semantic-ui-react';
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import SessionList from './SessionList';
 import SessionShow from './SessionShow';
@@ -121,18 +120,6 @@ class SessionContainer extends Component{
         }
     }
 
-    // getAllHands = (key) =>{
-    //     const handsURL = apiURL+'/'+key+'/Hands';
-    //     console.log('get all hands in session: '+handsURL);
-    //     try{
-    //         const allHands = await axios.get(handsURL);
-
-    //         return allHands
-    //     } catch(err){
-    //         console.log(err);
-    //     }
-    // }
-
     componentDidMount(){
         this.getAllSessions();
     }
@@ -159,7 +146,7 @@ class SessionContainer extends Component{
                     const hands = this.getHands(match.params.id);
                     console.log('SESSION: ',session);
                     console.log('HANDS',hands);
-                    return <SessionShow id = {match.params.id} session = {session}></SessionShow>
+                    return <SessionShow id = {match.params.id} session = {session} deleteHand = {this.deleteHand}></SessionShow>
                 }}> 
                 </Route>
                 <Route exact path = '/Sessions/:id/NewHand' render={({match})=>{

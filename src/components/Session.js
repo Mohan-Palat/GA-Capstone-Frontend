@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route,Link } from "react-router-dom";
-//const apiURL = 'http://localhost:5000';
+import { Link } from "react-router-dom";
 
 class Session extends Component{
     constructor(props){
