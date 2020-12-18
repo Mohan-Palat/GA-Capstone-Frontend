@@ -9,8 +9,11 @@ An app to keep track of hands of Texas Hold'em that you've played.
 - When I click on a Hand for more details, it should show me an edit form with the details pre filled.
 
 ## Diagrams
+<details>
+<summary>Show</summary>
 ![Index](resources/SessionIndex.png)
 ![Show](resources/SessionShow.png)
+</details>
 
 ## Issues
 My main issue was time. I spent more time than I expected to on the backend because I had to teach myself how to use Flask with mongoDB.
