@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 //import { Grid, Button } from 'semantic-ui-react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import SessionList from './SessionList';
 import SessionShow from './SessionShow';
 import CreateSession from './CreateSession';
+import CreateHand from './CreateHand';
 
 const apiURL = 'http://localhost:5000';
 
@@ -33,6 +34,18 @@ class SessionContainer extends Component{
                 currentHands: hands
             }
         )
+    }
+
+    addNewHand = async(e,data,id)=>{
+        console.log(data);
+        const newHandURL = apiURL+'/Sessions/'+id+'/Hands';
+        try{
+            await axios.post(newHandURL,data);
+        }
+        catch(err)
+        {
+            console.log(err);
+        }
     }
 
     addNewSession = async(e,data) =>{
@@ -117,6 +130,10 @@ class SessionContainer extends Component{
                     console.log('SESSION: ',session);
                     console.log('HANDS',hands);
                     return <SessionShow id = {match.params.id} session = {session}></SessionShow>
+                }}> 
+                </Route>
+                <Route exact path = '/Sessions/:id/NewHand' render={({match})=>{
+                    return <CreateHand id = {match.params.id } addNewHand={this.addNewHand}></CreateHand>
                 }}>
                     
                 </Route>
