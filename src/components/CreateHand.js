@@ -9,8 +9,8 @@ class CreateHand extends Component {
     card2_rank:'',
     card2_suit:'',
     action: '',
-    starting_stack: 0,
-    ending_stack: 0
+    starting_stack: '',
+    ending_stack: ''
   };
   handleCard1 = (e) => {
     console.log('EVENT: ',e)
@@ -52,24 +52,21 @@ class CreateHand extends Component {
                       value={this.state.action}
                       onChange={this.handleChange}></TextArea>
           </Form>
-          <Button type="Submit">Add Hand</Button>
-          {/* <Label>Entered with: </Label>
           <Form.Input
             type="number"
-            placeholder="$"
-            name="start_money"
+            placeholder="$ starting stack"
+            name="starting_stack"
             value={this.state.start_money}
             onChange={this.handleChange}
           />
-          <Label>Exited with: </Label>
           <Form.Input
             type="number"
-            placeholder="$"
-            name="end_money"
-            value={this.state.end_money}
+            placeholder="$ ending stack"
+            name="ending_stack"
+            value={this.state.start_money}
             onChange={this.handleChange}
           />
-          <button type="Submit">Add Session</button> */}
+          <Button type="Submit">Add Hand</Button>
         </Form>
       </Segment>
     );
