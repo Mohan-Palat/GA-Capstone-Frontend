@@ -88,6 +88,7 @@ class SessionContainer extends Component{
             console.log(err);
         }
 
+        window.location.reload(false);
         return '';
     }
 
