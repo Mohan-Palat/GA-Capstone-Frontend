@@ -5,6 +5,7 @@ import SessionList from './SessionList';
 import SessionShow from './SessionShow';
 import CreateSession from './CreateSession';
 import CreateHand from './CreateHand';
+import EditHand from './EditHand';
 
 const apiURL = 'http://localhost:5000';
 
@@ -152,7 +153,10 @@ class SessionContainer extends Component{
                 <Route exact path = '/Sessions/:id/NewHand' render={({match})=>{
                     return <CreateHand id = {match.params.id } addNewHand={this.addNewHand}></CreateHand>
                 }}>
-                    
+                </Route>
+                <Route exact path = '/Hands/:id' render={({match})=>{
+                    return <EditHand id = {match.params.id } ></EditHand>
+                }}>
                 </Route>
                 </Router>
 
