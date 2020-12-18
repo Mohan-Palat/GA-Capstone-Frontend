@@ -62,6 +62,35 @@ class SessionContainer extends Component{
         return '';
       }
     
+
+    deleteHand = async(e,id) =>{
+        console.log(id);
+        const deleteHandURL = apiURL+'/Hands/'+id
+
+        try{
+            await axios.delete(deleteHandURL);
+        }
+        catch(err){
+            console.log(err);
+        }
+
+        return '';
+    }
+
+    deleteSession = async(e,id) =>{
+        console.log(id);
+        const deleteSessionURL = apiURL+'/Sessions/'+id
+
+        try{
+            await axios.delete(deleteSessionURL);
+        }
+        catch(err){
+            console.log(err);
+        }
+
+        return '';
+    }
+
     getHands = async(id) =>{
         console.log('GET HANDS CALLED param: ',id);
         const handsURL = apiURL+'/Sessions/'+id+'/Hands'
